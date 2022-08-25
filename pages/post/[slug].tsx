@@ -11,6 +11,36 @@ const PostPage = ({ post }: Props) => {
   return (
     <main>
       <Header />
+
+      {post.mainImage && (
+        <img
+          className="object-cover w-full h-40"
+          src={urlFor(post.mainImage).url()}
+          alt=""
+        />
+      )}
+
+      <article className="max-w-3xl p-5 mx-auto">
+        <h1 className="mt-10 mb-3 text-4xl">{post.title}</h1>
+        <h2 className="mb-2 text-xl font-light text-gray-500">
+          {post.description}
+        </h2>
+
+        <div className="flex items-center space-x-2">
+          {post.author.image && (
+            <img
+              className="w-10 h-10 rounded-full"
+              src={urlFor(post.author.image).url()}
+              alt=""
+            />
+          )}
+          <p className="text-sm font-extralight">
+            Blog post by{" "}
+            <span className="text-green-600">{post.author.name}</span> -
+            Published at {new Date(post._createdAt).toLocaleDateString()}
+          </p>
+        </div>
+      </article>
     </main>
   );
 };
@@ -74,6 +104,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
     },
-    revalidate: 60 // updates old cached version after 60 seconds
+    revalidate: 60, // updates old cached version after 60 seconds
   };
 };
