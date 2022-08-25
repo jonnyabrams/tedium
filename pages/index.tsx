@@ -18,4 +18,8 @@ const Home: NextPage = () => {
   )
 }
 
+export const getServerSideProps = async () => {
+  const query = 
+}
+
 export default Home
