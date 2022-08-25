@@ -9,9 +9,13 @@ interface Props {
 const Post = ({ post }: Props) => {
   return (
     <Link href={`/post/${post.slug.current}`}>
-      <div className="">
+      <div className="group">
         {post.mainImage && (
-          <img src={urlFor(post.mainImage).url()} alt="Post image" />
+          <img
+            className="object-cover w-full h-60 group-hover:scale-105"
+            src={urlFor(post.mainImage).url()}
+            alt="Post image"
+          />
         )}
         <div className="flex justify-between p-5 bg-white">
           <div>
