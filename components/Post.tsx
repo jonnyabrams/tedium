@@ -12,7 +12,7 @@ const Post = ({ post }: Props) => {
       <div className="group">
         {post.mainImage && (
           <img
-            className="object-cover w-full transition-transform h-60 group-hover:scale-105"
+            className="object-cover w-full transition-transform duration-200 ease-in h-60 group-hover:scale-105 "
             src={urlFor(post.mainImage).url()}
             alt="Post image"
           />
