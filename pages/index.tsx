@@ -4,13 +4,13 @@ import { sanityClient, urlFor } from "../sanity";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import { Post } from "../typings";
+import Posts from "../components/Posts";
 
 interface Props {
   posts: Post[];
 }
 
 const Home = ({ posts }: Props) => {
-  console.log(posts)
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
@@ -20,6 +20,7 @@ const Home = ({ posts }: Props) => {
 
       <Header />
       <Banner />
+      <Posts posts={posts} />
     </div>
   );
 };
