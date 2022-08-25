@@ -1,4 +1,6 @@
 import { GetStaticProps } from "next";
+import PortableText from "react-portable-text";
+
 import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
@@ -39,6 +41,13 @@ const PostPage = ({ post }: Props) => {
             <span className="text-green-600">{post.author.name}</span> -
             Published at {new Date(post._createdAt).toLocaleDateString()}
           </p>
+        </div>
+
+        <div>
+          <PortableText
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+          />
         </div>
       </article>
     </main>
