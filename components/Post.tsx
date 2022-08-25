@@ -9,10 +9,10 @@ interface Props {
 const Post = ({ post }: Props) => {
   return (
     <Link href={`/post/${post.slug.current}`}>
-      <div className="group">
+      <div className="overflow-hidden border rounded-lg cursor-pointer group">
         {post.mainImage && (
           <img
-            className="object-cover w-full transition-transform duration-200 ease-in h-60 group-hover:scale-105 "
+            className="object-cover w-full transition-transform duration-200 ease-in h-60 group-hover:scale-105"
             src={urlFor(post.mainImage).url()}
             alt="Post image"
           />
