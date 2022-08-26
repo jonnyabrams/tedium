@@ -21,7 +21,7 @@ const Post = ({ post }: Props) => {
           <div>
             <p className="text-lg font-bold">{post.title}</p>
             <p className="text-xs">
-              {post.description} by {post.author.name}
+              {post.description} <span className="font-bold">by {post.author.name}</span>
             </p>
           </div>
 
