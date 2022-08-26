@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import { useState } from "react";
+import Comment from "../../components/Comment";
 
 interface IFormInput {
   _id: string;
@@ -175,6 +176,15 @@ const PostPage = ({ post }: Props) => {
           />
         </form>
       )}
+
+      <div className="flex flex-col max-w-2xl p-10 mx-auto my-10 space-y-2 shadow shadow-yellow-500">
+        <h3 className="text-4xl">Comments</h3>
+        <hr className="pb-2" />
+        
+        {post.comments.map((comment) => (
+          <Comment comment={comment} key={comment._id} />
+        ))}
+      </div>
     </main>
   );
 };
