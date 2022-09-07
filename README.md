@@ -8,7 +8,7 @@ Try it here: [https://tedium-eight.vercel.app/](https://tedium-eight.vercel.app/
 
 Blog posts have to be submitted via the content management system but users can post comments, which are displayed pending approval. It also has a responsive design, as demonstrated in the video demo below.
 
-There are a range of additional features I'd ideally have liked to implement, but this was primarily an exercise in improving my fluency with TypeScript, Next.js and Tailwind.
+There's a range of additional features I'd like to have implemented, but this was primarily an exercise in improving my fluency with TypeScript, Next.js and Tailwind.
 
 ---
 
